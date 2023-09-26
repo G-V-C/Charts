@@ -39,6 +39,16 @@ open class CandleChartDataEntry: ChartDataEntry
         self.open = open
         self.close = close
     }
+    
+    @objc public init(x: Double, shadowH: Double, shadowL: Double, open: Double, close: Double, nullValue: Bool)
+    {
+        super.init(x: x, y: (shadowH + shadowL) / 2.0)
+        
+        self.high = shadowH
+        self.low = shadowL
+        self.open = open
+        self.close = close
+    }
 
     @objc public convenience init(x: Double, shadowH: Double, shadowL: Double, open: Double, close: Double, icon: NSUIImage?)
     {
